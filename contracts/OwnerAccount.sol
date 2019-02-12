@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-contract HelloWorld {
+contract OwnerAccount {
 
     string public message;
     uint public value;

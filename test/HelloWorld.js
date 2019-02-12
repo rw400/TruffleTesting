@@ -1,11 +1,11 @@
-var HelloWorld = artifacts.require("./HelloWorld.sol");
+var OwnerAccount = artifacts.require("./OwnerAccount.sol");
 
 let instance;
 
 contract('HellowWorld', (accounts) => {
 
     before(async function(){
-        instance = await HelloWorld.deployed();
+        instance = await OwnerAccount.deployed();
     });
 
     describe('Constructor testing', function(){ 
@@ -101,7 +101,7 @@ contract('HellowWorld', (accounts) => {
 
     // describe('Owner Address testing', function(){
     //     it("Should set owner correctly.", async () => {
-    //         //let instance = await HelloWorld.deployed();
+    //         //let instance = await OwnerAccount.deployed();
             
     //         let _owner = await instance.owner();
     //         assert.equal(_owner, accounts[0]);

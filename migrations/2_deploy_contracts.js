@@ -1,5 +1,5 @@
-var HelloWorld = artifacts.require("./HelloWorld.sol");
+var OwnerAccount = artifacts.require("./OwnerAccount.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(HelloWorld, "hello world", 10); // arguements in constructor
+  deployer.deploy(OwnerAccount, "hello world", 10); // arguements in constructor
 };
