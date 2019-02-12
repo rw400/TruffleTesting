@@ -3,28 +3,34 @@ pragma solidity ^0.5.0;
 contract HelloWorld {
 
     string public message;
-    uint public total;
+    uint public value;
+    uint public sum;
     address owner;
 
-    constructor(string memory _message) public {
+    constructor(string memory _message, uint _value) public {
         owner = msg.sender;
         message = _message;
-
+        value = _value;
     }
 
-    function updateMessage (string memory _newMessage) public {
+    modifier onlyOwner(){
         require (msg.sender == owner,"not owner");
+        _;
+    }
+
+    function updateMessage (string memory _newMessage) public onlyOwner {
         message = _newMessage;
     }
 
+    function updateValue (uint _value) public onlyOwner {
+        value = _value;
+    }
+    
     function add (uint _num1, uint _num2) public {
-        total = _num1 + _num2;
+        sum = _num1 + _num2;
     }
 
-    function updateOwner (address _newOwner) public {
-        require (msg.sender == owner, "not the current owner");
+    function transferOwner (address _newOwner) public onlyOwner {
         owner = _newOwner;
     }
-
-
 }
